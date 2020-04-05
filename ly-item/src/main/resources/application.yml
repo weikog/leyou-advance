@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   application:
     name: item-service
@@ -10,9 +10,9 @@ spring:
     password: root
   rabbitmq:
     host: 127.0.0.1
-    username: leyou
-    password: leyou
-    virtual-host: /leyou
+    username: leyou126
+    password: leyou126
+    virtual-host: /leyou126
     template:
       retry: #重试策略
         enabled: true #是否重试

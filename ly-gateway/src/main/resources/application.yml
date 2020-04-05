@@ -90,7 +90,7 @@ eureka:
     initial-instance-info-replication-interval-seconds: 5 # 最初复制实例信息到eureka服务器所需的时间（s），默认为40秒
 ly:
   jwt:
-    pubKeyPath: D:\develop\rsa_key\jwt_key.pub # 公钥地址
+    pubKeyPath: F:\项目二\项目二：乐优商城前端代码\rsa_key\jwt_key.pub # 公钥地址
     cookie:
       cookieName: LY_TOKEN # cookie名称
     app:

@@ -27,8 +27,8 @@ eureka:
     prefer-ip-address: true
 ly:
   jwt:
-    pubKeyPath: D:\develop\rsa_key\jwt_key.pub # 公钥地址
-    priKeyPath: D:\develop\rsa_key\jwt_key # 私钥地址
+    pubKeyPath: F:\项目二\项目二：乐优商城前端代码\rsa_key\jwt_key.pub # 公钥地址
+    priKeyPath: F:\项目二\项目二：乐优商城前端代码\rsa_key\jwt_key # 私钥地址
     cookie:
       expire: 30 #过期时间设置 单位分钟
       refreshTime: 15 #过期时间设置 单位分钟
