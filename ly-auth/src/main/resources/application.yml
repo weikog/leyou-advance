@@ -1,0 +1,44 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/leyou?allowMultiQueries=true
+    username: root
+    password: root
+mybatis:
+  type-aliases-package: com.leyou.auth.entity
+  mapper-locations: mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.leyou: debug
+mapper:
+  wrap-keyword: "`{0}`"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+ly:
+  jwt:
+    pubKeyPath: D:\ly_guangzhou126\software\rsa_key\jwt_key.pub # 公钥地址
+    priKeyPath: D:\ly_guangzhou126\software\rsa_key\jwt_key # 私钥地址
+    cookie:
+      expire: 30 #过期时间设置 单位分钟
+      refreshTime: 15 #过期时间设置 单位分钟
+      cookieName: LY_TOKEN # cookie名称
+      cookieDomain: leyou.com # cookie的域
+    app:
+      expire: 1500 #过期时间设置 单位分钟
+      id: 10
+      serviceName: auth-service
+  encoder:
+    crypt:
+      secret: ${random.uuid}
+      strength: 10

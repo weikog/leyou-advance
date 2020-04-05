@@ -1,0 +1,107 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://manage.leyou.com"
+              - "http://www.leyou.com"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+            maxAge: 360000
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
+              - HEAD
+      routes:
+        - id: item-service   # 路由id,可以随意写
+          # 代理的服务地址；lb表示负载均衡(从eureka中获取具体服务)
+          uri: lb://item-service
+          # 路由断言，可以配置映射路径
+          predicates:
+            - Path=/api/item/**
+          filters:
+            # 表示过滤1个路径，2表示两个路径，以此类推
+            - StripPrefix=2
+        - id: upload-service   # 路由id,可以随意写
+          # 代理的服务地址；lb表示负载均衡(从eureka中获取具体服务)
+          uri: lb://upload-service
+          # 路由断言，可以配置映射路径
+          predicates:
+            - Path=/api/upload/**
+          filters:
+            # 表示过滤1个路径，2表示两个路径，以此类推
+            - StripPrefix=2
+        - id: search-service
+          uri: lb://search-service
+          predicates:
+            - Path=/api/search/**
+          filters:
+            - StripPrefix=2
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - StripPrefix=2
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=2
+        - id: cart-service
+          uri: lb://cart-service
+          predicates:
+            - Path=/api/cart/**
+          filters:
+            - StripPrefix=2
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - StripPrefix=1
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/pay/**
+          filters:
+            - StripPrefix=1
+  task:
+    scheduling:
+      pool:
+        size: 1 #一般有几个定时任务就开启几个线程
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5  #  从eureka服务器注册表中获取注册信息的时间间隔（s），默认为30秒
+    instance-info-replication-interval-seconds: 5 #  复制实例变化信息到eureka服务器所需要的时间间隔（s），默认为30秒
+    initial-instance-info-replication-interval-seconds: 5 # 最初复制实例信息到eureka服务器所需的时间（s），默认为40秒
+ly:
+  jwt:
+    pubKeyPath: D:\ly_guangzhou126\software\rsa_key\jwt_key.pub # 公钥地址
+    cookie:
+      cookieName: LY_TOKEN # cookie名称
+    app:
+      id: 7
+      serviceName: api-gateway
+  filter:
+    allowPaths:
+      - /api/auth/login
+      - /api/search
+      - /api/user/register
+      - /api/user/check
+      - /api/user/code
+      - /api/item
+      - /api/pay

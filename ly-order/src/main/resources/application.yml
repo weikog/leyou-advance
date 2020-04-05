@@ -1,0 +1,35 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/leyou?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    default-property-inclusion: non_null #处理json只处理非空字段
+  redis:
+    host: 127.0.0.1
+  main:
+    allow-bean-definition-overriding: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+mybatis:
+  type-aliases-package: com.leyou.order.entity
+  configuration:
+    map-underscore-to-camel-case: true
+ly:
+  worker:
+    workerId: 1
+    dataCenterId: 1
+  pay:
+    wx:
+      appID: wx8397f8696b538317
+      mchID: 1473426802
+      key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
+      notifyUrl: http://xn4agt.natappfree.cc/api/pay/wx/notify
+      payType: NATIVE

@@ -1,0 +1,63 @@
+{
+  "timestamp": "2020-03-26T01:24:55.383+0000",
+  "status": 400,
+  "error": "Bad Request",
+  "errors": [
+    {
+      "codes": [
+        "Length.user.password",
+        "Length.password",
+        "Length.java.lang.String",
+        "Length"
+      ],
+      "arguments": [
+        {
+          "codes": [
+            "user.password",
+            "password"
+          ],
+          "arguments": null,
+          "defaultMessage": "password",
+          "code": "password"
+        },
+        6,
+        4
+      ],
+      "defaultMessage": "长度需要在4和6之间",
+      "objectName": "user",
+      "field": "password",
+      "rejectedValue": "11",
+      "bindingFailure": false,
+      "code": "Length"
+    },
+    {
+      "codes": [
+        "Size.user.username",
+        "Size.username",
+        "Size.java.lang.String",
+        "Size"
+      ],
+      "arguments": [
+        {
+          "codes": [
+            "user.username",
+            "username"
+          ],
+          "arguments": null,
+          "defaultMessage": "username",
+          "code": "username"
+        },
+        6,
+        4
+      ],
+      "defaultMessage": "用户名不符合规范",
+      "objectName": "user",
+      "field": "username",
+      "rejectedValue": "ha",
+      "bindingFailure": false,
+      "code": "Size"
+    }
+  ],
+  "message": "Validation failed for object='user'. Error count: 2",
+  "path": "/register"
+}

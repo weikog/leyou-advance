@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "name": "图书、音像、电子书刊",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 1,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 74,
+    "name": "手机",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 2,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 103,
+    "name": "家用电器",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 3,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 202,
+    "name": "数码",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 4,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 264,
+    "name": "家居家装",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 5,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 322,
+    "name": "电脑办公",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 6,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 417,
+    "name": "厨具",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 7,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 471,
+    "name": "个护化妆",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 8,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 548,
+    "name": "服饰内衣",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 9,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 666,
+    "name": "钟表",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 10,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 680,
+    "name": "鞋靴",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 11,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 718,
+    "name": "母婴",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 12,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 808,
+    "name": "礼品箱包",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 13,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 871,
+    "name": "食品饮料、保健食品",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 14,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 931,
+    "name": "珠宝",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 15,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 1020,
+    "name": "汽车用品",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 16,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 1117,
+    "name": "运动健康",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 17,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 1230,
+    "name": "玩具乐器",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 18,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 1293,
+    "name": "彩票、旅行、充值、票务",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 19,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 1329,
+    "name": "生鲜",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 20,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  },
+  {
+    "id": 1401,
+    "name": "整车",
+    "parentId": 0,
+    "isParent": true,
+    "sort": 21,
+    "createTime": "2019-05-07T02:46:41.000+0000",
+    "updateTime": "2019-05-07T02:46:41.000+0000"
+  }
+]

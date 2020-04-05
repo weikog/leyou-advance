@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-api/ly-auth-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-api/ly-item-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-api/ly-user-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-cart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-item" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-lock-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-page" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-pojo/ly-auth-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-pojo/ly-item-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-pojo/ly-order-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-pojo/ly-search-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-pojo/ly-user-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-registry" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-sharding-sphere" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-sms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-upload" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ly-user" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

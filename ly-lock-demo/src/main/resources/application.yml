@@ -1,0 +1,11 @@
+server:
+  port: 9096
+spring:
+  application:
+    name: lock-server
+  task:
+    scheduling:
+      pool:
+        size: 2
+  redis:
+    host: 127.0.0.1

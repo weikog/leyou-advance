@@ -1,0 +1,41 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///leyou
+    username: root
+    password: root
+  rabbitmq:
+    host: 127.0.0.1
+    username: leyou126
+    password: leyou
+    virtual-host: /leyou126
+    template:
+      retry: #重试策略
+        enabled: true #是否重试
+        initial-interval: 10000ms #第一次重试时间
+        max-interval: 80000ms #最后一次重试时间
+        multiplier: 2 #重试间隔的时间倍数
+    publisher-confirms: true #手动ack回执，只有在消费者不抛出异常的时候，才算消费成功
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  type-aliases-package: com.leyou.item.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mappers/*.xml
+mapper:
+  wrap-keyword: "`{0}`"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
+logging:
+  level:
+    com.leyou: debug

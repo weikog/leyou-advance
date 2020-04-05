@@ -1,0 +1,120 @@
+POST http://localhost:8085/query?username=jackma&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8085/register?username=jackma&password=1234&phone=13399996666&code=112233
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-26T093259.400.json
+
+###
+
+POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-26T092455.400.json
+
+###
+
+POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:10010/api/item/category/of/parent?pid=0
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T023119.200.json
+
+###
+
+GET http://localhost:8081/category/of/parent?pid=0
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T023038.200.json
+
+###
+
+GET http://localhost:8081/category/of/parent
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T023019.400.json
+
+###
+
+POST http://localhost:8081/save?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T095530.501.json
+
+###
+
+POST http://localhost:8081/save?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T094939.501.json
+
+###
+
+POST http://localhost:8081/save?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T093833.500.json
+
+###
+
+POST http://localhost:8081/save?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T093746.500.json
+
+###
+
+POST http://localhost:8081/save?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T092951.500.json
+
+###
+
+POST http://localhost:8081/save?id=2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T092724.201.json
+
+###
+
+POST http://localhost:8081/save?id=2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-03-12T091516.200.json
+
+###
+
