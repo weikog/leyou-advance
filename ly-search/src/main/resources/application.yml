@@ -9,9 +9,9 @@ spring:
       cluster-nodes: 127.0.0.1:9300
   rabbitmq:
     host: 127.0.0.1
-    username: leyou126
+    username: leyou
     password: leyou
-    virtual-host: /leyou126
+    virtual-host: /leyou
 eureka:
   client:
     service-url:

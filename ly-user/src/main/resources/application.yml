@@ -12,8 +12,8 @@ spring:
     host: 127.0.0.1
   rabbitmq:
     host: 127.0.0.1
-    virtual-host: /leyou126
-    username: leyou126
+    virtual-host: /leyou
+    username: leyou
     password: leyou
   main:
     allow-bean-definition-overriding: true
@@ -37,7 +37,7 @@ ly:
       secret: ${random.uuid} # 随机的密钥，使用uuid
       strength: 10 # 加密强度4~31，决定了密码和盐加密时的运算次数，超过10以后加密耗时会显著增加
   jwt:
-    pubKeyPath: D:\ly_guangzhou126\software\rsa_key\jwt_key.pub # 公钥地址
+    pubKeyPath: D:\develop\rsa_key\jwt_key.pub # 公钥地址
     app:
       id: 1
       serviceName: user-service

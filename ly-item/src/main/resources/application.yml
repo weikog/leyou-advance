@@ -10,9 +10,9 @@ spring:
     password: root
   rabbitmq:
     host: 127.0.0.1
-    username: leyou126
+    username: leyou
     password: leyou
-    virtual-host: /leyou126
+    virtual-host: /leyou
     template:
       retry: #重试策略
         enabled: true #是否重试
