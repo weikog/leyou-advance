@@ -8,7 +8,7 @@ spring:
   rabbitmq:
     host: 127.0.0.1
     username: leyou126
-    password: leyou
+    password: leyou126
     virtual-host: /leyou126
 eureka:
   client:
@@ -16,5 +16,5 @@ eureka:
       defaultZone: http://127.0.0.1:10086/eureka
 ly:
   static:
-    itemDir: D:\ly_guangzhou126\software\nginx-1.16.0\html\item #静态页服务器地址
+    itemDir: F:\JAVA\nginx-1.16.0\nginx-1.16.0\html\item #静态页服务器地址
     itemTemplate: item #模板名称
