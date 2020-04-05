@@ -4,11 +4,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * 1111111111
- * 2222222222222
- * 33333333333
- */
 @FeignClient("auth-service")
 public interface AuthClient {
     /**
