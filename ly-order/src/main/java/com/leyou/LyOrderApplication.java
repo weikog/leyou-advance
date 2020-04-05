@@ -11,7 +11,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableFeignClients
 @MapperScan("com.leyou.order.mapper")
 public class LyOrderApplication {
-//上传
+//上传123
     public static void main(String[] args) {
         SpringApplication.run(LyOrderApplication.class, args);
     }
