@@ -15,10 +15,11 @@ eureka:
     prefer-ip-address: true
 ly:
   oss:
-    accessKeyId: LTsdfsgsgA
-    accessKeySecret: f9ZsgsgsgsPexK
-    host: http://image.leyou.com # 访问oss的域名，很重要bucket + endpoint
-    endpoint: oss-cn-beijing.aliyuncs.com # 你的服务的端点，不一定跟我一样
+    accessKeyId: LTAI4FdFNjz9GNw8YqAZRVsD
+    accessKeySecret: 1JBq6tc3AkTRvPF8iTVKRHoyKoRzRj
+    #host: http://jack-upload-demo.oss-cn-shenzhen.aliyuncs.com # 访问oss的域名，很重要bucket + endpoint
+    host: http://image.leyou.com
+    endpoint: oss-cn-shenzhen.aliyuncs.com # 你的服务的端点，不一定跟我一样
     dir: "" # 保存到bucket的某个子目录
     expireTime: 20 # 过期时间，单位是S
     maxFileSize: 5242880 #文件大小限制，这里是5M

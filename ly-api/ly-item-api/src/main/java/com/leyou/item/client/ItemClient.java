@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+/* 测试：item的api */
+
 @FeignClient("item-service")
 public interface ItemClient {
 
@@ -60,4 +62,10 @@ public interface ItemClient {
     /*减库存*/
     @PutMapping("/stock/minus")
     public Void minusStock(@RequestBody Map<Long, Integer> paramMap);
+
+    /**
+     * 根据skuId查询sku
+     */
+    @GetMapping("/sku/{id}")
+    public Sku findSkuById(@PathVariable("id")Long id);
 }

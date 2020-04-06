@@ -223,4 +223,10 @@ public class GoodsService {
             skuMapper.updateByPrimaryKeySelective(record);
         });
     }
+
+    //根据skuId查询对应的商品
+    public Sku findSkuById(Long id) {
+        Sku sku = skuMapper.selectByPrimaryKey(id);
+        return sku;
+    }
 }

@@ -14,6 +14,10 @@ public abstract class MQConstants {
          * 消息服务交换机名称
          */
         public static final String SMS_EXCHANGE_NAME = "ly.sms.exchange";
+        /**
+         * 抢购商品服务交换机名称
+         */
+        public static final String PROMOTION_EXCHANGE_NAME = "ly.promotion.exchange";
     }
 
 
@@ -31,6 +35,10 @@ public abstract class MQConstants {
          * 消息服务的routing-key
          */
         public static final String VERIFY_CODE_KEY = "sms.verify.code";
+        /**
+         * 抢购商品的routing-key
+         */
+        public static final String PROMOTION_KEY = "promotion.key";
     }
 
     public static final class Queue{
@@ -55,5 +63,9 @@ public abstract class MQConstants {
          * 消息服务的队列
          */
         public static final String SMS_VERIFY_CODE_QUEUE = "sms.verify.code.queue";
+        /**
+         * 抢购商品的队列
+         */
+        public static final String PROMOTION_ORDER_QUEUE = "promotion.order.queue";
     }
 }
