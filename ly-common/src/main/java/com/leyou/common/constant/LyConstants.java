@@ -22,4 +22,7 @@ public class LyConstants {
 
     /*支付链接在redis中存储的key的前缀*/
     public static final String PAY_URL_PRE = "PAY_URL_PRE";
+
+    /*抢购商品在redis中存储的key的前缀*/
+    public static final String SKU_PRE = "SKU_PRE";
 }
