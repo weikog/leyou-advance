@@ -81,4 +81,12 @@ public class GoodsController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+    /**
+     * 根据skuId查询sku
+     */
+    @GetMapping("/sku/{id}")
+    public ResponseEntity<Sku> findSkuById(@PathVariable("id")Long id){
+        Sku sku = goodsService.findSkuById(id);
+        return ResponseEntity.ok(sku);
+    }
 }

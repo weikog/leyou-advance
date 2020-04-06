@@ -62,4 +62,10 @@ public interface ItemClient {
     /*减库存*/
     @PutMapping("/stock/minus")
     public Void minusStock(@RequestBody Map<Long, Integer> paramMap);
+
+    /**
+     * 根据skuId查询sku
+     */
+    @GetMapping("/sku/{id}")
+    public Sku findSkuById(@PathVariable("id")Long id);
 }
