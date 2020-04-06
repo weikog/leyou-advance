@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+/* 测试：item的api */
+
 @FeignClient("item-service")
 public interface ItemClient {
 
