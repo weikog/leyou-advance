@@ -7,7 +7,6 @@ import com.leyou.common.exception.pojo.LyException;
 import com.leyou.common.utils.BeanHelper;
 import com.leyou.common.utils.IdWorker;
 import com.leyou.item.client.ItemClient;
-import com.leyou.item.client.PromotionClient;
 import com.leyou.item.entity.Sku;
 import com.leyou.order.dto.CartDTO;
 import com.leyou.order.dto.OrderDTO;
@@ -20,7 +19,6 @@ import com.leyou.order.mapper.OrderDetailMapper;
 import com.leyou.order.mapper.OrderLogisticsMapper;
 import com.leyou.order.mapper.OrderMapper;
 import com.leyou.order.utils.PayHelper;
-import com.leyou.promotion.dto.SkuDTO;
 import com.leyou.user.client.UserClient;
 import com.leyou.user.dto.AddressDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -234,6 +232,31 @@ public class OrderService {
             log.error("【微信回调通知】修改订单状态失败！");
         }
         log.info("【微信回调通知】成功结束！");
+    }
+    //根据用户id查询所有订单
+    public PageResult<OrderVO> findUserOrder(Integer status, Integer page, Integer rows) {
+        PageHelper.startPage(page,rows);
+        Example example=new Example(Order.class);
+        Example.Criteria criteria = example.createCriteria();
+        Long userId = UserHolder.getUserId();
+        criteria.andEqualTo("userId",userId);
+        if (status!=0){
+            criteria.andEqualTo("status",status);
+        }
+        List<Order> orderList = orderMapper.selectByExample(example);
+        PageInfo<Order> pa = new PageInfo<>(orderList);
+        List<OrderVO> orderVOList = BeanHelper.copyWithCollection(orderList, OrderVO.class);
+
+        orderVOList.forEach(e->{
+            Example orderDeailExample = new Example(OrderDetail.class);
+            orderDeailExample.createCriteria().andEqualTo("orderId",e.getOrderId());
+            List<OrderDetail> orders = orderDetailMapper.selectByExample(orderDeailExample);
+            e.setDetailList(orders);
+        });
+        PageInfo<OrderVO> pageInfo = new PageInfo<>(orderVOList);
+        PageResult<OrderVO> result = new PageResult<>(pa.getTotal(),pa.getPages(),pageInfo.getList());
+
+        return result;
     }
 
     /**
