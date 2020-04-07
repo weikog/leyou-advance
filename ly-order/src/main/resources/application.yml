@@ -14,6 +14,11 @@ spring:
     host: 127.0.0.1
   main:
     allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 127.0.0.1
+    username: leyou126
+    password: leyou126
+    virtual-host: /leyou126
 eureka:
   client:
     service-url:
@@ -33,3 +38,6 @@ ly:
       key: T6m9iK73b0kn9g5v426MKfHQH7X8rKwb
       notifyUrl: http://xn4agt.natappfree.cc/api/pay/wx/notify
       payType: NATIVE
+logging:
+  level:
+    con.leyou: debug

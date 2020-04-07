@@ -77,6 +77,12 @@ spring:
             - Path=/api/pay/**
           filters:
             - StripPrefix=1
+        - id: promotion-service
+          uri: lb://promotion-service
+          predicates:
+            - Path=/api/promotion/**
+          filters:
+            - StripPrefix=1
   task:
     scheduling:
       pool:
@@ -105,3 +111,4 @@ ly:
       - /api/user/code
       - /api/item
       - /api/pay
+      - /api/promotion

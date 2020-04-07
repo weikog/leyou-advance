@@ -1,120 +1,374 @@
-POST http://localhost:8085/query?username=jackma&password=1234
+GET http://localhost:8090/promotion/sale?id=2868393&userId=32
 Accept: */*
 Cache-Control: no-cache
 
 ###
 
-POST http://localhost:8085/register?username=jackma&password=1234&phone=13399996666&code=112233
+POST http://localhost:8090/promotion/minusStore?id=2868393
 Accept: */*
 Cache-Control: no-cache
 
 ###
 
-POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+POST http://localhost:8090/promotion/minusStore?id=2868393
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-26T093259.400.json
+<> 2020-04-07T091258.500.json
 
 ###
 
-POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+POST http://localhost:8090/promotion/minusStore?id=2868393
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-26T092455.400.json
+<> 2020-04-07T091142.500.json
 
 ###
 
-POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T091031.405.json
+
+###
+
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T091030.405.json
+
+###
+
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T091029.405.json
+
+###
+
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T091028.405.json
+
+###
+
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T091006.405.json
+
+###
+
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T090953-1.405.json
+
+###
+
+GET http://localhost:8090/promotion/minusStore?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T090953.405.json
+
+###
+
+GET http://localhost:8090/sku/2868393?id=2868393&userId=32
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T085041.200.json
+
+###
+
+GET http://localhost:8090/promotion/sale?id=2868393&userId=32
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T054729.200.json
+
+###
+
+GET http://localhost:8090/promotion/sale?id=2868393&userId=32
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T054343.200.json
+
+###
+
+GET http://localhost:8090/promotion/sale?id=2868393&userId=32
 Accept: */*
 Cache-Control: no-cache
 
 ###
 
-POST http://localhost:8085/register?username=ha&password=11&phone=13399996666&code=112233
+GET http://localhost:8090/promotion/sale?id=2868393&userId=32
 Accept: */*
 Cache-Control: no-cache
 
 ###
 
-GET http://localhost:10010/api/item/category/of/parent?pid=0
+GET http://localhost:8090/promotion/sale?id=2868393
 Accept: */*
 Cache-Control: no-cache
-
-<> 2020-03-12T023119.200.json
 
 ###
 
-GET http://localhost:8081/category/of/parent?pid=0
+GET http://localhost:8090/promotion/sale?id=2868393
 Accept: */*
 Cache-Control: no-cache
-
-<> 2020-03-12T023038.200.json
 
 ###
 
-GET http://localhost:8081/category/of/parent
+GET http://localhost:8090/promotion/sale?id=2868393
 Accept: */*
 Cache-Control: no-cache
-
-<> 2020-03-12T023019.400.json
 
 ###
 
-POST http://localhost:8081/save?id=1
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T095530.501.json
+<> 2020-04-07T050544.200.json
 
 ###
 
-POST http://localhost:8081/save?id=1
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T094939.501.json
+<> 2020-04-07T050328.200.json
 
 ###
 
-POST http://localhost:8081/save?id=1
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T093833.500.json
+<> 2020-04-07T045956.200.json
 
 ###
 
-POST http://localhost:8081/save?id=1
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T093746.500.json
+<> 2020-04-07T045919.200.json
 
 ###
 
-POST http://localhost:8081/save?id=1
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T092951.500.json
+<> 2020-04-07T045831.200.json
 
 ###
 
-POST http://localhost:8081/save?id=2
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T092724.201.json
+<> 2020-04-07T045424.200.json
 
 ###
 
-POST http://localhost:8081/save?id=2
+GET http://localhost:8090/promotion/activeAll
 Accept: */*
 Cache-Control: no-cache
 
-<> 2020-03-12T091516.200.json
+<> 2020-04-07T045327.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T045241.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T045224.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T044901.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T044200-1.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T044200.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T044159.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T044158.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T044143.200.json
+
+###
+
+GET http://localhost:8090/sku/2868435
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T043955.200.json
+
+###
+
+GET http://localhost:8090/sku/{2868435}
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8090/sku/{2868435}
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8090/sku/{2868435}
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8090/sku/{2868435}
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T043404.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T043238.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T042821.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T042243.200.json
+
+###
+
+GET http://localhost:8090/promotion/activeAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-07T041511.200.json
+
+###
+
+GET http://localhost:8090/sku/2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-06T092920.200.json
+
+###
+
+GET http://localhost:8090/sku/2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-06T084118.200.json
+
+###
+
+GET http://localhost:8090/sku/2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-06T083952.500.json
+
+###
+
+GET http://localhost:8090/sku/{id}?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8090/sku?id=2868393
+Accept: */*
+Cache-Control: no-cache
+
+<> 2020-04-06T083859.500.json
+
+###
+
+GET http://localhost:8090/sku/{id}?id=2868393
+Accept: */*
+Cache-Control: no-cache
 
 ###
 

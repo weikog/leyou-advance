@@ -1,7 +1,0 @@
-{
-  "timestamp": "2020-03-12T01:29:51.411+0000",
-  "status": 500,
-  "error": "Internal Server Error",
-  "message": "Id不能为1！",
-  "path": "/save"
-}

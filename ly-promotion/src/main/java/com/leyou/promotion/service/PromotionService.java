@@ -1,9 +1,9 @@
 package com.leyou.promotion.service;
 
-import com.leyou.common.auth.pojo.UserHolder;
 import com.leyou.common.constant.LyConstants;
 import com.leyou.common.constant.MQConstants;
 import com.leyou.common.exception.pojo.LyException;
+import com.leyou.common.utils.BeanHelper;
 import com.leyou.item.client.ItemClient;
 import com.leyou.item.entity.Sku;
 import com.leyou.promotion.dto.SkuDTO;
@@ -41,8 +41,10 @@ public class PromotionService {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
+    private Object receive;
+
     //查询所有抢购商品
-    public List<Sku> findActivePromotion() {
+    public List<SkuDTO> findActivePromotion() {
         List<PromotionEntity> promotionEntities = promotionMapper.selectAll();
         //抢购商品为空
         if (promotionEntities == null) {
@@ -54,7 +56,16 @@ public class PromotionService {
                 .collect(Collectors.toList());
         //调用itemClient进行查询对应的skus
         List<Sku> skus = itemClient.findSkusByIds(skuIds);
-        return skus;
+        //将所有信息封装成SkuDTO
+        List<SkuDTO>skuDTOS = BeanHelper.copyWithCollection(promotionEntities,SkuDTO.class);
+        for (SkuDTO skuDTO : skuDTOS){
+            for (Sku sku : skus){
+                if (skuDTO.getSkuId().equals(sku.getId())){
+                    BeanUtils.copyProperties(sku,skuDTO);
+                }
+                }
+        }
+        return skuDTOS;
     }
 
 
@@ -74,26 +85,37 @@ public class PromotionService {
     }
 
     //根据skuId生成订单
-    public Long SalePromotion(Long id) {
-        //获取redis中抢购商品的key
+    public Object SalePromotion(Long id,Long userId) {
+        //获取到抢购商品的redis前缀
         String key = LyConstants.SKU_PRE+id;
-        //获取当前用户id
-        Long userId = UserHolder.getUserId();
-        //判断计数器是否存在
-        if (! redisTemplate.hasKey(key)){
-            redisTemplate.opsForValue().set(key, String.valueOf(0));
+        //使用redis计数器
+        Long count = redisTemplate.opsForValue().increment(key, 0);
+        //获取到抢购商品的限购数量
+        PromotionEntity promotionEntity = promotionMapper.selectByPrimaryKey(id);
+        Integer store = promotionEntity.getStore();
+        //获取到用户id
+//        Long userId = UserHolder.getUserId();
+        //合成消息队列的发送信息
+        Map<String,Long> promotionMap = new HashMap<>();
+        promotionMap.put("id",id);
+        promotionMap.put("userId",userId);
+        if (count<=store){
+             receive = amqpTemplate.convertSendAndReceive(MQConstants.Exchange.PROMOTION_EXCHANGE_NAME,
+                    MQConstants.RoutingKey.PROMOTION_KEY, promotionMap);
         }
-        String number = redisTemplate.opsForValue().get(key);
-        Long count = Long.valueOf(number);
-        //判断是否已经销售完毕
-        if (count<promotionMapper.selectByPrimaryKey(id).getStore()){
-            ++count;
-            Map<String,Long> map = new HashMap<>();
-            map.put("skuId",id);
-            map.put("userId",userId);
-            redisTemplate.opsForValue().set(key, String.valueOf(count));
-            amqpTemplate.convertAndSend(MQConstants.Exchange.PROMOTION_EXCHANGE_NAME,MQConstants.RoutingKey.PROMOTION_KEY,map);
-        }
-        return null;
+        return receive;
+    }
+
+
+    //减抢购商品库存
+    public void minusStore(Long id) {
+        //获取到当前的剩余库存
+        PromotionEntity promotionEntity = promotionMapper.selectByPrimaryKey(id);
+        //创建新的promotionEntity
+        PromotionEntity newPro = new PromotionEntity();
+        newPro.setStore(promotionEntity.getStore()-1);
+        newPro.setSkuId(id);
+        //减库存
+        promotionMapper.updateByPrimaryKeySelective(newPro);
     }
 }

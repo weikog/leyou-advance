@@ -15,6 +15,7 @@
         <module>ly-item-api</module>
         <module>ly-user-api</module>
         <module>ly-auth-api</module>
+        <module>ly-promotion-api</module>
     </modules>
 
     <dependencies>
