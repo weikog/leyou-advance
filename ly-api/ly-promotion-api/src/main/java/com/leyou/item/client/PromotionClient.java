@@ -12,7 +12,7 @@ public interface PromotionClient {
     /**
      * 根据skuId查询sku信息
      */
-    @GetMapping("/sku/{id}")
+    @GetMapping("/promotion/sku/{id}")
     public SkuDTO findSkuById(@PathVariable("id")Long id);
 
     /**

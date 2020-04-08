@@ -111,4 +111,6 @@ ly:
       - /api/user/code
       - /api/item
       - /api/pay
-      - /api/promotion
+      - /api/promotion/sku
+      - /api/promotion/activeAll
+      - /promotion/sale

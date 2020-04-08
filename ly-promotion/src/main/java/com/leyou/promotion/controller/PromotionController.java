@@ -43,9 +43,10 @@ public class PromotionController {
     /**
      * 根据skuId生成订单
      */
-    @GetMapping("/promotion/sale")
-    public ResponseEntity<Object> SalePromotion(@RequestParam("id")Long id,@RequestParam("userId")Long userId){
-        Object orderId = promotionService.SalePromotion(id,userId);
+    @GetMapping("/promotion/sale/{id}")
+    public ResponseEntity<Long> SalePromotion(@PathVariable("id")Long id){
+        Long orderId = promotionService.SalePromotion(id);
+        System.out.println("--------------"+orderId.toString());
         return ResponseEntity.ok(orderId);
     }
 
@@ -57,4 +58,5 @@ public class PromotionController {
         promotionService.minusStore(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
 }

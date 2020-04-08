@@ -1,12 +1,16 @@
 package com.leyou.order.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.leyou.common.auth.pojo.UserHolder;
 import com.leyou.common.constant.LyConstants;
 import com.leyou.common.exception.pojo.ExceptionEnum;
 import com.leyou.common.exception.pojo.LyException;
+import com.leyou.common.pojo.PageResult;
 import com.leyou.common.utils.BeanHelper;
 import com.leyou.common.utils.IdWorker;
 import com.leyou.item.client.ItemClient;
+import com.leyou.item.client.PromotionClient;
 import com.leyou.item.entity.Sku;
 import com.leyou.order.dto.CartDTO;
 import com.leyou.order.dto.OrderDTO;
@@ -19,6 +23,7 @@ import com.leyou.order.mapper.OrderDetailMapper;
 import com.leyou.order.mapper.OrderLogisticsMapper;
 import com.leyou.order.mapper.OrderMapper;
 import com.leyou.order.utils.PayHelper;
+import com.leyou.promotion.dto.SkuDTO;
 import com.leyou.user.client.UserClient;
 import com.leyou.user.dto.AddressDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
 import java.util.Date;

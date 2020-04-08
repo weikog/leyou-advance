@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 
 /**
@@ -43,6 +44,7 @@ public class PromotionService {
 
     private Object receive;
 
+    private ReentrantLock lock = new ReentrantLock();
     //查询所有抢购商品
     public List<SkuDTO> findActivePromotion() {
         List<PromotionEntity> promotionEntities = promotionMapper.selectAll();
@@ -85,11 +87,15 @@ public class PromotionService {
     }
 
     //根据skuId生成订单
-    public Object SalePromotion(Long id,Long userId) {
+    public Long SalePromotion(Long id) {
         //获取到抢购商品的redis前缀
         String key = LyConstants.SKU_PRE+id;
+        //查询出抢购商品的时间
+//        PromotionEntity timePro = promotionMapper.selectByPrimaryKey(id);
+        lock.lock();
         //使用redis计数器
-        Long count = redisTemplate.opsForValue().increment(key, 0);
+        Long count = redisTemplate.opsForValue().increment(key,0);
+        lock.unlock();
         //获取到抢购商品的限购数量
         PromotionEntity promotionEntity = promotionMapper.selectByPrimaryKey(id);
         Integer store = promotionEntity.getStore();
@@ -98,12 +104,12 @@ public class PromotionService {
         //合成消息队列的发送信息
         Map<String,Long> promotionMap = new HashMap<>();
         promotionMap.put("id",id);
-        promotionMap.put("userId",userId);
+        promotionMap.put("userId",32L);
         if (count<=store){
-             receive = amqpTemplate.convertSendAndReceive(MQConstants.Exchange.PROMOTION_EXCHANGE_NAME,
+              receive =  amqpTemplate.convertSendAndReceive(MQConstants.Exchange.PROMOTION_EXCHANGE_NAME,
                     MQConstants.RoutingKey.PROMOTION_KEY, promotionMap);
         }
-        return receive;
+        return (Long) receive;
     }
 
 
@@ -114,8 +120,10 @@ public class PromotionService {
         //创建新的promotionEntity
         PromotionEntity newPro = new PromotionEntity();
         newPro.setStore(promotionEntity.getStore()-1);
+        newPro.setSold(promotionEntity.getSold()+1);
         newPro.setSkuId(id);
         //减库存
         promotionMapper.updateByPrimaryKeySelective(newPro);
+
     }
 }
