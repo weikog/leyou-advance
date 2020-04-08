@@ -94,7 +94,7 @@ public class PromotionService {
 //        PromotionEntity timePro = promotionMapper.selectByPrimaryKey(id);
         lock.lock();
         //使用redis计数器
-        Long count = redisTemplate.opsForValue().increment(key,0);
+        Long count = redisTemplate.opsForValue().increment(key,1);
         lock.unlock();
         //获取到抢购商品的限购数量
         PromotionEntity promotionEntity = promotionMapper.selectByPrimaryKey(id);
@@ -105,11 +105,13 @@ public class PromotionService {
         Map<String,Long> promotionMap = new HashMap<>();
         promotionMap.put("id",id);
         promotionMap.put("userId",32L);
-        if (count<=store){
+        if (count.intValue()<=store){
               receive =  amqpTemplate.convertSendAndReceive(MQConstants.Exchange.PROMOTION_EXCHANGE_NAME,
                     MQConstants.RoutingKey.PROMOTION_KEY, promotionMap);
+            return (Long) receive;
         }
-        return (Long) receive;
+//        redisTemplate.delete(key);
+        return -1L;
     }
 
 
@@ -119,7 +121,6 @@ public class PromotionService {
         PromotionEntity promotionEntity = promotionMapper.selectByPrimaryKey(id);
         //创建新的promotionEntity
         PromotionEntity newPro = new PromotionEntity();
-        newPro.setStore(promotionEntity.getStore()-1);
         newPro.setSold(promotionEntity.getSold()+1);
         newPro.setSkuId(id);
         //减库存

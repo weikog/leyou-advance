@@ -47,6 +47,9 @@ public class PromotionController {
     public ResponseEntity<Long> SalePromotion(@PathVariable("id")Long id){
         Long orderId = promotionService.SalePromotion(id);
         System.out.println("--------------"+orderId.toString());
+        if (orderId<0){
+            return ResponseEntity.ok(-1L);
+        }
         return ResponseEntity.ok(orderId);
     }
 
