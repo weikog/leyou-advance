@@ -1,5 +1,6 @@
 package com.leyou.order.controller;
 
+import com.leyou.common.pojo.PageResult;
 import com.leyou.order.dto.OrderDTO;
 import com.leyou.order.dto.OrderVO;
 import com.leyou.order.service.OrderService;
@@ -49,5 +50,12 @@ public class OrderController {
         return ResponseEntity.ok(orderStatus);
     }
 
+    @GetMapping("/order/list")
+    public ResponseEntity<PageResult<OrderVO>> findUserOrder(@RequestParam(value = "status",defaultValue = "0")Integer status,
+                                                  @RequestParam(value = "page")Integer page,
+                                                  @RequestParam(value = "rows")Integer rows){
+        PageResult<OrderVO> orderVOList=orderService.findUserOrder(status,page,rows);
+        return ResponseEntity.ok(orderVOList);
+    }
 
 }

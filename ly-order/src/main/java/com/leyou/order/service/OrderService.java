@@ -1,9 +1,12 @@
 package com.leyou.order.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.leyou.common.auth.pojo.UserHolder;
 import com.leyou.common.constant.LyConstants;
 import com.leyou.common.exception.pojo.ExceptionEnum;
 import com.leyou.common.exception.pojo.LyException;
+import com.leyou.common.pojo.PageResult;
 import com.leyou.common.utils.BeanHelper;
 import com.leyou.common.utils.IdWorker;
 import com.leyou.item.client.ItemClient;
@@ -27,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -229,5 +233,30 @@ public class OrderService {
             log.error("【微信回调通知】修改订单状态失败！");
         }
         log.info("【微信回调通知】成功结束！");
+    }
+    //根据用户id查询所有订单
+    public PageResult<OrderVO> findUserOrder(Integer status, Integer page, Integer rows) {
+        PageHelper.startPage(page,rows);
+        Example example=new Example(Order.class);
+        Example.Criteria criteria = example.createCriteria();
+        Long userId = UserHolder.getUserId();
+        criteria.andEqualTo("userId",userId);
+        if (status!=0){
+            criteria.andEqualTo("status",status);
+        }
+        List<Order> orderList = orderMapper.selectByExample(example);
+        PageInfo<Order> pa = new PageInfo<>(orderList);
+        List<OrderVO> orderVOList = BeanHelper.copyWithCollection(orderList, OrderVO.class);
+
+        orderVOList.forEach(e->{
+            Example orderDeailExample = new Example(OrderDetail.class);
+            orderDeailExample.createCriteria().andEqualTo("orderId",e.getOrderId());
+            List<OrderDetail> orders = orderDetailMapper.selectByExample(orderDeailExample);
+            e.setDetailList(orders);
+        });
+        PageInfo<OrderVO> pageInfo = new PageInfo<>(orderVOList);
+        PageResult<OrderVO> result = new PageResult<>(pa.getTotal(),pa.getPages(),pageInfo.getList());
+
+        return result;
     }
 }

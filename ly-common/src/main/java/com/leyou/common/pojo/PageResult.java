@@ -18,6 +18,12 @@ public class PageResult<T> {
         this.items = items;
     }
 
+    /**
+     *
+     * @param total 总条数
+     * @param totalPage 总页数
+     * @param items 当前页数据
+     */
     public PageResult(Long total, Integer totalPage, List<T> items) {
         this.total = total;
         this.totalPage = totalPage;
