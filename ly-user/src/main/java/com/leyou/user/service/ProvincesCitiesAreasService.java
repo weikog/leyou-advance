@@ -2,7 +2,7 @@ package com.leyou.user.service;
 
 import com.leyou.user.entity.Areas;
 import com.leyou.user.entity.Cities;
-import com.leyou.user.entity.Provinces;
+import com.leyou.user.entity.Province;
 import com.leyou.user.mapper.AreasMapper;
 import com.leyou.user.mapper.CitiesMapper;
 import com.leyou.user.mapper.ProvincesMapper;
@@ -34,8 +34,8 @@ public class ProvincesCitiesAreasService {
      * 查询省名列表
      * @return
      */
-    public List<Provinces> selectProvinceList() {
-        List<Provinces> provinces = provincesMapper.selectAll();
+    public List<Province> selectProvinceList() {
+        List<Province> provinces = provincesMapper.selectAll();
         return provinces;
     }
 

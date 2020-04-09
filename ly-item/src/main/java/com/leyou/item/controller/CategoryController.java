@@ -61,4 +61,15 @@ public class CategoryController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
+    /**
+     * 后台系统分类管理删除分类名称
+     * @param id
+     * @return
+     */
+    @GetMapping("/category/del")
+    public ResponseEntity<Void> delCategory(@RequestParam("id") Long id){
+        categoryService.delCategory(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
 }

@@ -31,8 +31,8 @@ public class AddressController {
     /*
      * 查询所有的市
      * */
-    @PostMapping("/city")
-    public ResponseEntity<List<City>> queryCity(@RequestBody String province){
+    @GetMapping("/city")
+    public ResponseEntity<List<City>> queryCity(@RequestParam("province") String province){
         List<City> cities =addressService.queryCity(province);
         return ResponseEntity.ok(cities);
     }
@@ -40,8 +40,8 @@ public class AddressController {
     /*
      * 查询所有的市区和县
      * */
-    @PostMapping("/area")
-    public ResponseEntity<List<Area>> queryArea(@RequestBody String city){
+    @GetMapping("/area")
+    public ResponseEntity<List<Area>> queryArea(@RequestParam("city") String city){
         List<Area> areas =addressService.queryArea(city);
         return ResponseEntity.ok(areas);
     }

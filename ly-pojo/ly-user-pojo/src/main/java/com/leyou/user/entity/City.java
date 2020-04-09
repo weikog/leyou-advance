@@ -14,7 +14,7 @@ public class City {
     @KeySql(useGeneratedKeys = true)
     private Integer id;
 
-    private String cityId;
+    private String cityid;
     private String city;
-    private String provinceId;
+    private String provinceid;
 }

@@ -9,6 +9,7 @@ import com.leyou.user.mapper.ProvinceMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -35,11 +36,11 @@ public class AddressService {
         Province record = new Province();
         record.setProvince(province);
         Province pro = provinceMapper.selectOne(record);
-        Integer provinceId = pro.getId();
+        Integer provinceId = Integer.parseInt(pro.getProvinceid());
 
         //查询父id为省代号的所有市
         City city = new City();
-        city.setProvinceId(provinceId.toString());
+        city.setProvinceid(provinceId.toString());
         List<City> cityList = cityMapper.select(city);
         return cityList;
     }
@@ -50,11 +51,11 @@ public class AddressService {
         City record = new City();
         record.setCity(city);
         City city1 = cityMapper.selectOne(record);
-        String cityId = city1.getCityId();
+        String cityId = city1.getCityid();
 
-        Area area = new Area();
-        area.setCityId(cityId);
-        List<Area> areaList = areaMapper.selectByExample(area);
+        Example example = new Example(Area.class);
+        example.createCriteria().andEqualTo("cityid",cityId);
+        List<Area> areaList = areaMapper.selectByExample(example);
         return areaList;
     }
 }

@@ -42,6 +42,7 @@ public class UserInfoController {
      * 用户信息回显
      * */
     @GetMapping("/userInfo/info")
+    @ResponseBody
     public ResponseEntity<UserInfo> queryUserInfo(@RequestParam("id") Long id){
         UserInfo ud=userInfoService.queryUserInfo(id);
         return ResponseEntity.ok(ud);
@@ -51,8 +52,9 @@ public class UserInfoController {
      * 更新用户信息
      * */
     @PostMapping("/userInfo/updateInfo")
-    public ResponseEntity<Void> updateUserInfo(@RequestBody UserInfo userInfo, HttpServletRequest request){
-        userInfoService.updateUserInfo(userInfo, request);
+    @ResponseBody
+    public ResponseEntity<Void> updateUserInfo(@RequestBody UserInfo userInfo){
+        userInfoService.updateUserInfo(userInfo);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 

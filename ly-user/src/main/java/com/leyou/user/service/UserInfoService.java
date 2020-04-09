@@ -114,7 +114,7 @@ public class UserInfoService {
     /*
      * 更新用户信息
      * */
-    public void updateUserInfo(UserInfo ud, HttpServletRequest request) {
+    public void updateUserInfo(UserInfo ud) {
         //获取userId
         UserInfo userInfo = new UserInfo();
         Long userId = ud.getId();

@@ -16,7 +16,7 @@ public class Area {
     @KeySql(useGeneratedKeys = true)
     private Integer id;
 
-    private String areaId;
+    private String areaid;
     private String area;
-    private String cityId;
+    private String cityid;
 }

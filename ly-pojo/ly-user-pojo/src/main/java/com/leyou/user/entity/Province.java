@@ -14,6 +14,6 @@ public class Province {
     @KeySql(useGeneratedKeys = true)
     private Integer id;
 
-    private String provinceId;
+    private String provinceid;
     private String province;
 }
