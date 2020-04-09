@@ -128,10 +128,10 @@ public class PromotionService {
 
     }
 
-    //添加抢购商品
+
     public void addPromotion(PromotionEntity promotionEntity) {
         //添加promotionEntity
-        promotionMapper.insert(promotionEntity);
+        promotionMapper.insertSelective(promotionEntity);
         //删除原本库存
         itemClient.deleteSkuStock(promotionEntity.getSkuId(),promotionEntity.getStore());
     }

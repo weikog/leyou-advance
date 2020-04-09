@@ -69,7 +69,7 @@ public class PromotionController {
     @PostMapping("promotion/add")
     public ResponseEntity<Void> addPromotion(@RequestBody PromotionEntity promotionEntity){
         promotionService.addPromotion(promotionEntity);
-        return ResponseEntity.status(HttpStatus.CONTINUE).build();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 }
