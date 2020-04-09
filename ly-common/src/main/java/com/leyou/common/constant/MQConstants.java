@@ -18,6 +18,11 @@ public abstract class MQConstants {
          * 抢购商品服务交换机名称
          */
         public static final String PROMOTION_EXCHANGE_NAME = "ly.promotion.exchange";
+        /**
+         * 商品分类交换机名称
+         */
+        public static final String CATEGORY_EXCHANGE_NAME = "ly.category.exchange";
+
     }
 
 
@@ -39,6 +44,11 @@ public abstract class MQConstants {
          * 抢购商品的routing-key
          */
         public static final String PROMOTION_KEY = "promotion.key";
+        /**
+         * 商品分类修改的routing-key
+         */
+        public static final String CATEGORY_UPDATE_KEY = "category.update";
+
     }
 
     public static final class Queue{
@@ -67,5 +77,9 @@ public abstract class MQConstants {
          * 抢购商品的队列
          */
         public static final String PROMOTION_ORDER_QUEUE = "promotion.order.queue";
+        /**
+         * 商品分类修改的队列
+         */
+        public static final String CATEGORY_UPDATE = "category.update.queue";
     }
 }
