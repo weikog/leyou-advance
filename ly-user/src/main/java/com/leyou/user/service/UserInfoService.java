@@ -100,12 +100,10 @@ public class UserInfoService {
     /*
      * 查找用户信息
      * */
-    public UserInfo queryUserInfo(Long id,HttpServletRequest request) {
-        //获取userId
-        UserInfo userInfo = new UserInfo();
-        userInfo.setId(id);
+    public UserInfo queryUserInfo(Long id) {
+
         //根据用户id查询用户信息
-        UserInfo ud = userInfoMapper.selectOne(userInfo);
+        UserInfo ud = userInfoMapper.selectByPrimaryKey(id);
         if(ud==null){
             throw new LyException(ExceptionEnum.INVALID_PARAM_ERROR);
         }
@@ -142,7 +140,7 @@ public class UserInfoService {
     // 图片上传的路径
     private final static String IMAGE_FILE_PATH = "D:\\project\\static\\images\\profile";
     // 图片 服务器名称
-    private final static String IMAGE_URL = "http://image.leyou.com";
+    private final static String IMAGE_URL = "http://image.leyou.com/images/profile/";
     // 允许上传图片的格式
     private final static List<String> ALLOW_UPLOAD_IMAGE = Arrays.asList("image/png","image/jpeg");
 

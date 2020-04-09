@@ -42,8 +42,8 @@ public class UserInfoController {
      * 用户信息回显
      * */
     @GetMapping("/userInfo/info")
-    public ResponseEntity<UserInfo> queryUserInfo(@RequestParam("id") Long id,HttpServletRequest request){
-        UserInfo ud=userInfoService.queryUserInfo(id, request);
+    public ResponseEntity<UserInfo> queryUserInfo(@RequestParam("id") Long id){
+        UserInfo ud=userInfoService.queryUserInfo(id);
         return ResponseEntity.ok(ud);
     }
 
