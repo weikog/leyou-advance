@@ -1,8 +1,11 @@
 package com.leyou.user.controller;
 
 
+import com.leyou.user.config.JwtProperties;
 import com.leyou.user.entity.UserInfo;
+import com.leyou.user.service.AddressService;
 import com.leyou.user.service.UserInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * Created by 2020.04.06 21:17
  */
 @RestController
+@Slf4j
 public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
@@ -27,44 +31,30 @@ public class UserInfoController {
     @Autowired
     private HttpServletResponse response;
 
-    /**
-     * 查询个人信息
-     * @param id
-     * @return
-     */
-    @GetMapping("/user/{id}")
-    public ResponseEntity<UserInfo> findUserInfo(@RequestParam("id") Long id) {
-        UserInfo userInfo = userInfoService.findUserInfo(id);
-        return ResponseEntity.ok(userInfo);
+    @Autowired
+    private JwtProperties prop;
+
+    @Autowired
+    private AddressService addressService;
+
+
+    /*
+     * 用户信息回显
+     * */
+    @GetMapping("/userInfo/info")
+    public ResponseEntity<UserInfo> queryUserInfo(@RequestParam("id") Long id,HttpServletRequest request){
+        UserInfo ud=userInfoService.queryUserInfo(id, request);
+        return ResponseEntity.ok(ud);
     }
 
-
-    /**
-     * 更新个人信息
-     * @param userInfo
-     * @return
-     */
-    @PostMapping("/user/info")
-    public ResponseEntity<Void> saveUserInfo(@RequestBody UserInfo userInfo) {
-        //拼接生日
-        String birthday =
-        request.getParameter("year") + "-" + request.getParameter("month") + "-" + request.getParameter("day");
-        //设置生日
-        userInfo.setBirthday(birthday);
-
-        userInfoService.saveUserInfo(userInfo);
+    /*
+     * 更新用户信息
+     * */
+    @PostMapping("/userInfo/updateInfo")
+    public ResponseEntity<Void> updateUserInfo(@RequestBody UserInfo userInfo, HttpServletRequest request){
+        userInfoService.updateUserInfo(userInfo, request);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    /**
-     * 更新头像
-     * @param userInfo
-     * @return
-     */
-    @PostMapping("/user/img")
-    public ResponseEntity<Void> updateImage(@RequestBody UserInfo userInfo) {
-        userInfoService.saveUserImage(userInfo);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
 
 }
