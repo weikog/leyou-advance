@@ -20,28 +20,6 @@ public class UserInfoService {
 
 
     /**
-     * 保存个人信息
-     * @param userInfo
-     */
-    public void saveUserInfo(UserInfo userInfo) {
-        UserInfo data = findUserInfo(userInfo.getId());
-        if (data == null) {
-            //创建
-            int count = userInfoMapper.insert(userInfo);
-            if(count!=1){
-                throw new LyException(ExceptionEnum.INSERT_OPERATION_FAIL);
-            }
-        }else {
-            //修改
-            int count = userInfoMapper.updateByPrimaryKey(userInfo);
-            if(count!=1){
-                throw new LyException(ExceptionEnum.UPDATE_OPERATION_FAIL);
-            }
-        }
-
-    }
-
-    /**
      * 查询个人信息
      * @param userId
      * @return
@@ -56,23 +34,41 @@ public class UserInfoService {
     }
 
     /**
+     * 更新个人信息
+     * @param userInfo
+     */
+    public void saveUserInfo(UserInfo userInfo) {
+        data(userInfo);
+    }
+
+    /**
      * 更新头像
      * @param userInfo
      */
     public void saveUserImage(UserInfo userInfo) {
+        data(userInfo);
+    }
+
+    /**
+     * 数据处理
+     * @param userInfo
+     */
+    private void data(UserInfo userInfo) {
         UserInfo data = findUserInfo(userInfo.getId());
         if (data == null) {
             //创建
             int count = userInfoMapper.insert(userInfo);
-            if (count != 1) {
+            if(count!=1){
                 throw new LyException(ExceptionEnum.INSERT_OPERATION_FAIL);
             }
         }else {
             //修改
             int count = userInfoMapper.updateByPrimaryKey(userInfo);
-            if (count != 1) {
+            if(count!=1){
                 throw new LyException(ExceptionEnum.UPDATE_OPERATION_FAIL);
             }
         }
     }
+
+
 }
