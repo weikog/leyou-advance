@@ -25,6 +25,7 @@
         <module>ly-order</module>
         <module>ly-sharding-sphere</module>
         <module>ly-lock-demo</module>
+        <module>ly-promotion</module>
     </modules>
 
     <parent>

@@ -1,12 +1,11 @@
 package com.leyou.item.controller;
 
+import com.leyou.item.dto.AllMenuDTO;
 import com.leyou.item.entity.Category;
 import com.leyou.item.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +32,18 @@ public class CategoryController {
     public ResponseEntity<List<Category>> findCategorysByIds(@RequestParam("ids") List<Long> ids){
         List<Category> list = categoryService.findCategorysByIds(ids);
         return ResponseEntity.ok(list);
+    }
+
+
+    /**
+     * 首页导航功能，查找全部三级菜单
+     * @param
+     * @return
+     */
+    @GetMapping("/category/menu")
+    public ResponseEntity<List<AllMenuDTO>> findMenu(){
+        List<AllMenuDTO> allMenuDTOS = categoryService.findMenu();
+        return ResponseEntity.ok(allMenuDTOS);
     }
 
 }

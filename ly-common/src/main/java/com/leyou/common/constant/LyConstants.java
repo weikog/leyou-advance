@@ -25,4 +25,7 @@ public class LyConstants {
 
     /*抢购商品在redis中存储的key的前缀*/
     public static final String SKU_PRE = "SKU_PRE";
+
+    /*首页导航菜单数据在redis中存储的key*/
+    public static final String INDEX_MENU_KEY = "INDEX_MENU_KEY";
 }

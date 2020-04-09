@@ -19,6 +19,7 @@ public class SkuDTO {
     private Date beginTime;
     private Date endTime;
     private Integer store;
+    private Integer sold;
     private Integer enable;
     private Long spuId;
     private String title;

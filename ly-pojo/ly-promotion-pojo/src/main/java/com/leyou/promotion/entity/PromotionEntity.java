@@ -23,5 +23,6 @@ public class PromotionEntity {
     private Date beginTime;
     private Date endTime;
     private Integer store;
+    private Integer sold;
     private Integer enable;
 }
