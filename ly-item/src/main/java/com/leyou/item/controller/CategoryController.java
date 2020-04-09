@@ -4,8 +4,11 @@ import com.leyou.item.dto.AllMenuDTO;
 import com.leyou.item.entity.Category;
 import com.leyou.item.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -44,6 +47,18 @@ public class CategoryController {
     public ResponseEntity<List<AllMenuDTO>> findMenu(){
         List<AllMenuDTO> allMenuDTOS = categoryService.findMenu();
         return ResponseEntity.ok(allMenuDTOS);
+    }
+
+    /**
+     * 后台系统分类管理修改分类名称
+     * @param id
+     * @param name
+     * @return
+     */
+    @GetMapping("/category/edit")
+    public ResponseEntity<Void> editCategory(@RequestParam("id") Long id,@RequestParam("name") String name){
+        categoryService.editCategory(id,name);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 }
