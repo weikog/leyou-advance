@@ -89,4 +89,13 @@ public class GoodsController {
         Sku sku = goodsService.findSkuById(id);
         return ResponseEntity.ok(sku);
     }
+
+    /**
+     * 根据skuId删除库存
+     */
+    @PostMapping("/sku/delete")
+    public ResponseEntity<Void> deleteSkuStock(@RequestParam("id")Long id,@RequestParam("store")Integer store){
+        goodsService.deleteSkuStock(id,store);
+        return ResponseEntity.status(HttpStatus.CONTINUE).build();
+    }
 }

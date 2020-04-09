@@ -127,4 +127,12 @@ public class PromotionService {
         promotionMapper.updateByPrimaryKeySelective(newPro);
 
     }
+
+    //添加抢购商品
+    public void addPromotion(PromotionEntity promotionEntity) {
+        //添加promotionEntity
+        promotionMapper.insert(promotionEntity);
+        //删除原本库存
+        itemClient.deleteSkuStock(promotionEntity.getSkuId(),promotionEntity.getStore());
+    }
 }

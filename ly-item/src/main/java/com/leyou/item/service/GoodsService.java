@@ -55,6 +55,15 @@ public class GoodsService {
     @Autowired
     private AmqpTemplate amqpTemplate;
 
+    //删除库存
+    public  void deleteSkuStock(Long id, Integer store) {
+        Sku sku = skuMapper.selectByPrimaryKey(id);
+        Sku newSku = new Sku();
+        newSku.setId(id);
+        newSku.setStock(sku.getStock()-store);
+        skuMapper.updateByPrimaryKeySelective(newSku);
+    }
+
     public PageResult<SpuDTO> goodsPageQuery(Integer page, Integer rows, String key, Boolean saleable) {
         //提供分页信息
         PageHelper.startPage(page, rows);

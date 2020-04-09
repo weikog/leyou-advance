@@ -1,6 +1,7 @@
 package com.leyou.promotion.controller;
 
 import com.leyou.promotion.dto.SkuDTO;
+import com.leyou.promotion.entity.PromotionEntity;
 import com.leyou.promotion.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -60,6 +61,15 @@ public class PromotionController {
     public ResponseEntity<Void> minusStore(@RequestParam("id")Long id){
         promotionService.minusStore(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    /**
+     * 添加抢购商品
+     */
+    @PostMapping("promotion/add")
+    public ResponseEntity<Void> addPromotion(@RequestBody PromotionEntity promotionEntity){
+        promotionService.addPromotion(promotionEntity);
+        return ResponseEntity.status(HttpStatus.CONTINUE).build();
     }
 
 }
