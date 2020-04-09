@@ -198,7 +198,7 @@
                                         <i v-text="params[id]"></i>
                                     </div>
                                 </dt>
-                                <dd v-for="(o,i) in options" :key="i" @click="selectSku(id,i)">
+                                <dd v-for="(o,i) in options" :key="i" @click="!locked(id,i)?selectSku(id,i):''">
                                     <a href="javascript:;" :class="{selected:i === indexes[id], locked:locked(id, i)}">
                                         {{o}}<span title="点击取消选择">&nbsp;</span>
                                     </a>
@@ -653,6 +653,14 @@
             params,// 参数对象数组
             indexes,// 初始化被选中的参数
             num: 1,
+            zeroList:[],
+        },
+        created(){
+            for(let sku of skus){
+                if(sku.stock==0){
+                    this.zeroList.push(sku.indexes);
+                }
+            }
         },
         methods: {
             decrement() {
@@ -721,7 +729,7 @@
                 const {...o} = this.indexes;
                 o[id] = i;
                 const index = Object.values(o).join("_");
-                return !indexArr.includes(index);
+                return !indexArr.includes(index) || this.zeroList.includes(index);
             },
             selectSku(id, i) {
                 // 先判断当前选中的是否是锁定项
