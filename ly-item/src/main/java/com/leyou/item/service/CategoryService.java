@@ -1,6 +1,7 @@
 package com.leyou.item.service;
 
 import com.leyou.common.constant.LyConstants;
+import com.leyou.common.constant.MQConstants;
 import com.leyou.common.exception.pojo.ExceptionEnum;
 import com.leyou.common.exception.pojo.LyException;
 import com.leyou.common.utils.BeanHelper;
@@ -10,8 +11,8 @@ import com.leyou.item.dto.CategoryDTO;
 import com.leyou.item.dto.MenuDTO;
 import com.leyou.item.entity.Category;
 import com.leyou.item.entity.CategoryGroup;
-import com.leyou.item.mapper.CategoryGroupMapper;
 import com.leyou.item.mapper.CategoryMapper;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,8 @@ public class CategoryService {
     private StringRedisTemplate redisTemplate;
 
     @Autowired
-    private CategoryGroupMapper categoryGroupMapper;
+    private AmqpTemplate amqpTemplate;
+
 
     public List<Category> findCategoryByPid(Long pid) {
         //封装条件
@@ -55,9 +57,11 @@ public class CategoryService {
         return list;
     }
 
-    //1级菜单组
+
+
+    //一级菜单组
     public List<CategoryGroup> getCategoryGroups() {
-        List<CategoryGroup> categoryGroups = categoryGroupMapper.selectAll();
+        List<CategoryGroup> categoryGroups = categoryMapper.getCategoryGroups();
 
         if (CollectionUtils.isEmpty(categoryGroups)){
             throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
@@ -68,8 +72,11 @@ public class CategoryService {
 
     //首页导航加载全部菜单
     public List<AllMenuDTO> getAllMenu() {
-        List<CategoryGroup> categoryGroups = getCategoryGroups();
+        //获取一级菜单组
+        List<CategoryGroup> categoryGroups = categoryMapper.getCategoryGroups();
+        //把一级菜单组属性复制到AllMenuDTO
         List<AllMenuDTO> allMenuDTOS = BeanHelper.copyWithCollection(categoryGroups, AllMenuDTO.class);
+        //遍历获取二级三级菜单
         allMenuDTOS.forEach(allMenuDTO -> {
             String[] cids = allMenuDTO.getCategoryIds().split(",");
             List<MenuDTO> menuDTOS = new LinkedList<>();
@@ -108,7 +115,6 @@ public class CategoryService {
         String indexMenuKey = LyConstants.INDEX_MENU_KEY;
         List<AllMenuDTO> allMenuDTOS = getAllMenu();
         redisTemplate.opsForValue().set(indexMenuKey,JsonUtils.toString(allMenuDTOS));
-
     }
 
 
@@ -139,5 +145,20 @@ public class CategoryService {
 
         List<AllMenuDTO> allMenuDTOS = JsonUtils.toList(menus, AllMenuDTO.class);
         return allMenuDTOS;
+    }
+
+    /**
+     * 后台管理系统修改分类，并发送到mq异步更新首页导航菜单的redis数据
+     * @param id
+     * @param name
+     */
+    public void editCategory(Long id, String name) {
+        Category category = categoryMapper.selectByPrimaryKey(id);
+        category.setName(name);
+        categoryMapper.updateByPrimaryKeySelective(category);
+
+        //分类名称修改的同时，也更新首页导航菜单数据
+        String routingKey = MQConstants.RoutingKey.CATEGORY_UPDATE_KEY;
+        amqpTemplate.convertAndSend(MQConstants.Exchange.CATEGORY_EXCHANGE_NAME,routingKey,id);
     }
 }

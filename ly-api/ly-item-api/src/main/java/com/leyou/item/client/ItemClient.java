@@ -68,4 +68,10 @@ public interface ItemClient {
      */
     @GetMapping("/sku/{id}")
     public Sku findSkuById(@PathVariable("id")Long id);
+
+    /**
+     * 根据skuId删除库存
+     */
+    @PostMapping("/sku/delete")
+    public Void deleteSkuStock(@RequestParam("id")Long id, @RequestParam("store")Integer store);
 }
