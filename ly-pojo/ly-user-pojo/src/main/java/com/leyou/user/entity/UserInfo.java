@@ -23,9 +23,11 @@ public class UserInfo {
     /**生日*/
     private String birthday;
     /**省市县*/
-    private String place;
+    private String province;
+    private String city;
+    private String district;
     /**职业*/
-    private String occupation;
+    private String job;
     /**头像地址*/
-    private String img_url;
+    private String imgurl;
 }
