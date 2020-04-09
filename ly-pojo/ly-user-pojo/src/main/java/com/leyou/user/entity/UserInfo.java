@@ -19,13 +19,11 @@ public class UserInfo {
     /**昵称*/
     private String name;
     /**性别*/
-    private Boolean gender;
+    private Integer gender;
     /**生日*/
     private String birthday;
     /**省市县*/
-    private String province;
-    private String city;
-    private String district;
+    private String address;
     /**职业*/
     private String job;
     /**头像地址*/
