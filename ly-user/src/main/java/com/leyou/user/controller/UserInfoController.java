@@ -6,9 +6,10 @@ import com.leyou.user.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author Royo.Liu
@@ -20,26 +21,38 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
+    @Autowired
+    private HttpServletRequest request;
+
+    @Autowired
+    private HttpServletResponse response;
+
     /**
      * 查询个人信息
-     * @param UserId
+     * @param id
      * @return
      */
-    @GetMapping("/userinfo/{UserId}")
-    public ResponseEntity<UserInfo> findUserInfo(Long UserId) {
-        UserInfo userInfo = userInfoService.findUserInfo(UserId);
+    @GetMapping("/user/{id}")
+    public ResponseEntity<UserInfo> findUserInfo(@RequestParam("id") Long id) {
+        UserInfo userInfo = userInfoService.findUserInfo(id);
         return ResponseEntity.ok(userInfo);
     }
 
+
     /**
-     * 保存个人信息
+     * 更新个人信息
      * @param userInfo
      * @return
      */
-    @PostMapping("/userinfo/save")
-    public ResponseEntity<Void> saveUserInfo(UserInfo userInfo) {
-        userInfoService.saveUserInfo(userInfo);
+    @PostMapping("/user/info")
+    public ResponseEntity<Void> saveUserInfo(@RequestBody UserInfo userInfo) {
+        //拼接生日
+        String birthday =
+        request.getParameter("year") + "-" + request.getParameter("month") + "-" + request.getParameter("day");
+        //设置生日
+        userInfo.setBirthday(birthday);
 
+        userInfoService.saveUserInfo(userInfo);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
@@ -48,9 +61,10 @@ public class UserInfoController {
      * @param userInfo
      * @return
      */
-    public ResponseEntity<Void> updateImage(UserInfo userInfo) {
+    @PostMapping("/user/img")
+    public ResponseEntity<Void> updateImage(@RequestBody UserInfo userInfo) {
         userInfoService.saveUserImage(userInfo);
-
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
 }

@@ -10,6 +10,7 @@ import com.leyou.common.pojo.PageResult;
 import com.leyou.common.utils.BeanHelper;
 import com.leyou.common.utils.IdWorker;
 import com.leyou.item.client.ItemClient;
+import com.leyou.item.client.PromotionClient;
 import com.leyou.item.entity.Sku;
 import com.leyou.order.dto.CartDTO;
 import com.leyou.order.dto.OrderDTO;
@@ -22,6 +23,7 @@ import com.leyou.order.mapper.OrderDetailMapper;
 import com.leyou.order.mapper.OrderLogisticsMapper;
 import com.leyou.order.mapper.OrderMapper;
 import com.leyou.order.utils.PayHelper;
+import com.leyou.promotion.dto.SkuDTO;
 import com.leyou.user.client.UserClient;
 import com.leyou.user.dto.AddressDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -67,6 +69,9 @@ public class OrderService {
 
     @Autowired
     private PayHelper payHelper;
+
+    @Autowired
+    private PromotionClient promotionClient;
 
 
 //    @GlobalTransactional
@@ -258,5 +263,80 @@ public class OrderService {
         PageResult<OrderVO> result = new PageResult<>(pa.getTotal(),pa.getPages(),pageInfo.getList());
 
         return result;
+    }
+
+    /**
+     * 抢购商品的订单生成
+     */
+    public Long buildPromotionOrder(Map<String,Long> promotionMap){
+        try {
+            //第一部分：保存订单信息
+            //获取订单号
+            Long orderId = idWorker.nextId();
+            //获取当前用户的id
+            Long userId = promotionMap.get("userId");
+            //创建订单订单对象
+            Order order = new Order();
+            order.setOrderId(orderId);
+            order.setStatus(OrderStatusEnum.INIT.value());
+            order.setUserId(userId);
+            order.setInvoiceType(0);
+//            order.setCreateTime(new Date());
+//            order.setUpdateTime(new Date());
+            order.setPaymentType(1);
+            order.setPostFee(0L);
+            order.setActualFee(1L);//实付金额写一分钱方便测试
+
+            //获取到抢购的商品信息
+            SkuDTO sku = promotionClient.findSkuById(promotionMap.get("id"));
+            //计算订单总金额
+            Long totalFee = sku.getPrice();
+            //给订单总金额赋值
+            order.setTotalFee(totalFee);
+            //保存订单
+            orderMapper.insertSelective(order);
+
+            //第二部分：保存订单详情信息
+            //初始化订单详情集合对象
+            List<OrderDetail> orderDetails = new ArrayList<>();
+            //遍历第一部分获取到的sku对象列表
+
+                //初始化一个OrderDetail对象
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.setId(idWorker.nextId());
+                orderDetail.setOrderId(orderId);
+                orderDetail.setTitle(sku.getTitle());
+                orderDetail.setSkuId(sku.getSkuId());
+                orderDetail.setPrice(sku.getPrice());
+                orderDetail.setOwnSpec(sku.getOwnSpec());
+                orderDetail.setImage(StringUtils.substringBefore(sku.getImages(), ","));
+                orderDetail.setNum(1);
+                orderDetail.setCreateTime(new Date());
+                orderDetail.setUpdateTime(new Date());
+                //把OrderDetail对象添加到OrderDetail集合中
+                orderDetails.add(orderDetail);
+
+            //保存订单详情列表
+            orderDetailMapper.insertList(orderDetails);
+
+            //第三部分：保存物流信息
+            //获取用户的物流信息
+            AddressDTO addressDTO = userClient.queryAddressById(userId, 1L);
+            //将AddressDTO转成OrderLogistics
+            OrderLogistics orderLogistics = BeanHelper.copyProperties(addressDTO, OrderLogistics.class);
+            //设置订单号
+            orderLogistics.setOrderId(orderId);
+            //保存订单物流信息
+            orderLogisticsMapper.insertSelective(orderLogistics);
+
+            //第四部分：减库存
+            promotionClient.minusStore(promotionMap.get("id"));
+
+            //遗留功能：清空购物车。什么时候清空？下单【对卖家不友好】，支付【对买家不友好】。
+            return orderId;
+        }catch (Exception e){
+            log.error(e.getMessage());
+            throw new LyException(ExceptionEnum.INSERT_OPERATION_FAIL);
+        }
     }
 }

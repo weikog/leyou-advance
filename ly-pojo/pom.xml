@@ -17,6 +17,7 @@
         <module>ly-user-pojo</module>
         <module>ly-auth-pojo</module>
         <module>ly-order-pojo</module>
+        <module>ly-promotion-pojo</module>
     </modules>
 
     <dependencies>

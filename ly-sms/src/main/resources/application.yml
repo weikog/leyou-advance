@@ -5,15 +5,15 @@ spring:
     name: sms-service
   rabbitmq:
     host: 127.0.0.1
-    username: leyou
-    password: leyou
-    virtual-host: /leyou
+    username: leyou126
+    password: leyou126
+    virtual-host: /leyou126
 ly:
   sms:
-    accessKeyID: LTAI4FdFNjz9GNw8YqAZRVsD # 阿里云创建用户的accessKeyId
-    accessKeySecret: 1JBq6tc3AkTRvPF8iTVKRHoyKoRzRj # 阿里云创建用户的AccessKeySecret
-    signName: 乐优商城 # 签名名称
-    verifyCodeTemplate: SMS_186613197 # 模板名称
+    accessKeyID: LTAI4FworD3BckZiNQHacojG # 你自己的accessKeyId
+    accessKeySecret: d6wRNSugFic56o5xMEgjs91ovpUWpK # 你自己的AccessKeySecret
+    signName: 乐友商城    # 签名名称
+    verifyCodeTemplate: SMS_186598538 # 模板名称
     domain: dysmsapi.aliyuncs.com # 域名
     action: SendSMS # API类型，发送短信
     version: 2017-05-25 # API版本，固定值

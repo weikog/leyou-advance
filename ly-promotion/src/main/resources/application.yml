@@ -1,0 +1,41 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: promotion-service
+  redis:
+    host: 127.0.0.1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///leyou
+    username: root
+    password: root
+  rabbitmq:
+    host: 127.0.0.1
+    username: leyou126
+    password: leyou126
+    virtual-host: /leyou126
+    template:
+      retry: #重试策略
+        enabled: true #是否重试
+        initial-interval: 10000ms #第一次重试时间
+        max-interval: 80000ms #最后一次重试时间
+        multiplier: 2 #重试间隔的时间倍数
+    publisher-confirms: true #手动ack回执，只有在消费者不抛出异常的时候，才算消费成功
+mybatis:
+  type-aliases-package: com.leyou.promotion.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mappers/*.xml
+mapper:
+  wrap-keyword: "`{0}`"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+logging:
+  level:
+    com.leyou: debug
