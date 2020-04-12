@@ -1,34 +1,48 @@
 package com.leyou.user.controller;
 
-import com.leyou.user.dto.AddressDTO;
+import com.leyou.user.entity.Area;
+import com.leyou.user.entity.City;
+import com.leyou.user.entity.Province;
+import com.leyou.user.service.AddressService;
+import com.leyou.user.service.UserInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("address")
+@RequestMapping("/address")
 public class AddressController {
 
-    /**
-     * 根据
-     * @param userId 用户id
-     * @param id 地址id
-     * @return 地址信息
-     */
-    @GetMapping
-    public ResponseEntity<AddressDTO> queryAddressById(@RequestParam("userId") Long userId, @RequestParam("id") Long id){
-        AddressDTO address = new AddressDTO();
-        address.setId(1L);
-        address.setStreet("珠吉路58号津安创业园一层黑马程序员");
-        address.setCity("广州");
-        address.setDistrict("天河区");
-        address.setAddressee("小飞飞");
-        address.setPhone("15800000000");
-        address.setProvince("广东");
-        address.setPostcode("510000");
-        address.setIsDefault(true);
-        return ResponseEntity.ok(address);
+    @Autowired
+    private AddressService addressService;
+    @Autowired
+    private UserInfoService userInfoService;
+
+    /*
+    * 查询所有的省份
+    * */
+    @GetMapping("/province")
+    public ResponseEntity<List<Province>> queryProvince(){
+        List<Province> provinces =addressService.queryProvince();
+        return ResponseEntity.ok(provinces);
+    }
+    /*
+     * 查询所有的市
+     * */
+    @GetMapping("/city")
+    public ResponseEntity<List<City>> queryCity(@RequestParam("province") String province){
+        List<City> cities =addressService.queryCity(province);
+        return ResponseEntity.ok(cities);
+    }
+
+    /*
+     * 查询所有的市区和县
+     * */
+    @GetMapping("/area")
+    public ResponseEntity<List<Area>> queryArea(@RequestParam("city") String city){
+        List<Area> areas =addressService.queryArea(city);
+        return ResponseEntity.ok(areas);
     }
 }

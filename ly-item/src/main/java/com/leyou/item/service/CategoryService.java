@@ -161,4 +161,11 @@ public class CategoryService {
         String routingKey = MQConstants.RoutingKey.CATEGORY_UPDATE_KEY;
         amqpTemplate.convertAndSend(MQConstants.Exchange.CATEGORY_EXCHANGE_NAME,routingKey,id);
     }
+
+    public void delCategory(Long id) {
+        categoryMapper.deleteByPrimaryKey(id);
+        //分类名称修改的同时，也更新首页导航菜单数据
+        String routingKey = MQConstants.RoutingKey.CATEGORY_UPDATE_KEY;
+        amqpTemplate.convertAndSend(MQConstants.Exchange.CATEGORY_EXCHANGE_NAME,routingKey,id);
+    }
 }

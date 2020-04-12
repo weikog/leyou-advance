@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c34e6d3-810c-4056-840a-70f297206e4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ly-order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ly-order/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/service/PromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/service/PromotionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/mapper/ProvincesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/mapper/ProvincesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/ProvincesCitiesAreasService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/ProvincesCitiesAreasService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -60,21 +67,69 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-common/src/main/java/com/leyou/common/auth/utils/JwtUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1796">
               <caret line="69" column="69" selection-start-line="69" selection-start-column="69" selection-end-line="69" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            <state relative-caret-position="330">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/service/PromotionService.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
+            <state relative-caret-position="-1710">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/UserInfoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="185" column="26" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="26" />
+              <folding>
+                <element signature="e#1633#1634#0" expanded="true" />
+                <element signature="e#1663#1664#0" expanded="true" />
+                <element signature="e#1766#1767#0" expanded="true" />
+                <element signature="e#1796#1797#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-210">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/LyUserApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/mapper/ProvincesMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,10 +138,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/ProvincesCitiesAreasService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-user/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            <state relative-caret-position="360">
+              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ly-order/src/main/java/com/leyou/order/service/OrderService.java">
+        <entry file="file://$PROJECT_DIR$/ly-auth/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="602">
               <caret line="335" column="27" lean-forward="true" selection-start-line="335" selection-start-column="27" selection-end-line="335" selection-end-column="27" />
+            <state relative-caret-position="596">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ly-gateway/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="103" column="23" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -97,8 +187,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -115,6 +205,9 @@
         <entry key="$PROJECT_DIR$" value="v1" />
       </map>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response25.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -137,7 +230,6 @@
         <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/dto/SkuDTO.java" />
         <option value="$PROJECT_DIR$/ly-common/src/main/java/com/leyou/common/constant/LyConstants.java" />
         <option value="$PROJECT_DIR$/ly-common/src/main/java/com/leyou/common/constant/MQConstants.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/ly-promotion/pom.xml" />
         <option value="$PROJECT_DIR$/ly-api/ly-promotion-api/pom.xml" />
         <option value="$PROJECT_DIR$/ly-order/pom.xml" />
@@ -149,13 +241,11 @@
         <option value="$PROJECT_DIR$/ly-pojo/ly-promotion-pojo/src/main/java/com/leyou/promotion/dto/SkuDTO.java" />
         <option value="$PROJECT_DIR$/ly-auth/src/main/java/com/leyou/auth/config/testskill.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/testskill.java" />
-        <option value="$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/PromotionServiceTest.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/Test.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/ThreadDemo.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/t2.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/TestSkill.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/MyThread.java" />
-        <option value="$PROJECT_DIR$/ly-pojo/ly-promotion-pojo/src/main/java/com/leyou/promotion/entity/PromotionEntity.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/test/java/SkillTestPool.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/SkillTestPool.java" />
         <option value="$PROJECT_DIR$/ly-gateway/src/main/resources/application.yml" />
@@ -163,13 +253,19 @@
         <option value="$PROJECT_DIR$/ly-page/src/main/resources/templates/item.html" />
         <option value="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/config/PasswordConfigTest.java" />
         <option value="$PROJECT_DIR$/ly-user/src/test/com.leyou.userTest/NameTest.java" />
-        <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java" />
-        <option value="$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/controller/GoodsController.java" />
         <option value="$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/service/GoodsService.java" />
         <option value="$PROJECT_DIR$/ly-api/ly-item-api/src/main/java/com/leyou/item/client/ItemClient.java" />
+        <option value="$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java" />
+        <option value="$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/controller/GoodsController.java" />
         <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/service/PromotionService.java" />
         <option value="$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java" />
         <option value="$PROJECT_DIR$/ly-order/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java" />
+        <option value="$PROJECT_DIR$/ly-pojo/ly-promotion-pojo/src/main/java/com/leyou/promotion/entity/PromotionEntity.java" />
+        <option value="$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/PromotionServiceTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/mapper/ProvincesMapper.java" />
+        <option value="$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/ProvincesCitiesAreasService.java" />
       </list>
     </option>
   </component>
@@ -218,6 +314,73 @@
               <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
               <item name="leyou" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-upload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-upload" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leyou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="ly-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="leyou" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -233,6 +396,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.gitignore&#10;F:/项目二/实战/leyou/ly-gateway/src/main/resources/application.yml" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586528384950" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -250,8 +414,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.leyou.user.config" />
       <recent name="com.leyou.promotion.service" />
+      <recent name="com.leyou.user.config" />
       <recent name="com.leyou.order.service" />
       <recent name="com.leyou.common.auth.utils" />
       <recent name="com.leyou.sms.mq" />
@@ -281,6 +445,182 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8090" />
+          <option name="urlPath" value="promotion/add" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="6008133" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="coupon" />
+                <option name="value" value="10000" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="beginTime" />
+                <option name="value" value="2020/04/08 17:41:51" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="endTime" />
+                <option name="value" value="2020/04/08 20:30:34" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="store" />
+                <option name="value" value="100" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="enable" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8090" />
+          <option name="urlPath" value="promotion/add" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="10493538594" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="coupon" />
+                <option name="value" value="10000" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="beginTime" />
+                <option name="value" value="2020-04-08 17:41:51" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="endTime" />
+                <option name="value" value="2020-04-08 20:30:34" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="store" />
+                <option name="value" value="100" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="enable" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8090" />
+          <option name="urlPath" value="promotion/add" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="skuId" />
+                <option name="value" value="10493538594" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="coupon" />
+                <option name="value" value="10000" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="beginTime" />
+                <option name="value" value="2020-04-08 17:41:51" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="endTime" />
+                <option name="value" value="2020-04-08 20:30:34" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="store" />
+                <option name="value" value="100" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="enable" />
+                <option name="value" value="1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8090" />
+          <option name="urlPath" value="promotion/add" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="id" />
+                <option name="value" value="2868393" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="store" />
+                <option name="value" value="1000" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:8090" />
@@ -890,23 +1230,7 @@
     </option>
     <option name="contentProportion" value="0.22102009" />
   </component>
-  <component name="RunManager" selected="JUnit.NameTest.test">
-    <configuration name="MyThread.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ly-promotion" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.leyou.promotion.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.leyou.promotion.service" />
-      <option name="MAIN_CLASS_NAME" value="com.leyou.promotion.service.MyThread" />
-      <option name="METHOD_NAME" value="Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PromotionServiceTest.test">
     <configuration name="NameTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ly-user" />
       <extension name="coverage">
@@ -917,6 +1241,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.leyou.userTest" />
       <option name="MAIN_CLASS_NAME" value="com.leyou.userTest.NameTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PromotionServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ly-promotion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.leyou.promotion.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.leyou.promotion.service" />
+      <option name="MAIN_CLASS_NAME" value="com.leyou.promotion.service.PromotionServiceTest" />
       <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -1057,7 +1397,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MyThread.Test" />
       <item itemvalue="JUnit.SkillTestPool.test" />
       <item itemvalue="JUnit.SkillTestPool" />
       <item itemvalue="JUnit.SkillTestPool.main" />
@@ -1075,14 +1414,15 @@
       <item itemvalue="Spring Boot.LyUploadApplication" />
       <item itemvalue="Spring Boot.LyUserApplication" />
       <item itemvalue="Spring Boot.LyPromotionApplication" />
+      <item itemvalue="JUnit.NameTest.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PromotionServiceTest.test" />
         <item itemvalue="JUnit.NameTest.test" />
         <item itemvalue="JUnit.SkillTestPool.main" />
         <item itemvalue="JUnit.SkillTestPool.test" />
         <item itemvalue="JUnit.SkillTestPool" />
-        <item itemvalue="JUnit.MyThread.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -1134,7 +1474,7 @@
       <workItem from="1586184530046" duration="1848000" />
       <workItem from="1586223467416" duration="32858000" />
       <workItem from="1586320605275" duration="26019000" />
-      <workItem from="1586396499684" duration="9879000" />
+      <workItem from="1586396499684" duration="16075000" />
     </task>
     <task id="LOCAL-00001" summary="一期项目">
       <created>1586057676965</created>
@@ -1185,19 +1525,17 @@
       <option name="project" value="LOCAL" />
       <updated>1586365663831</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="完成抢购后台代码编写,增加了添加抢购商品功能">
+      <created>1586432793774</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586432793774</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SkillTestPool_test - 2020.04.08 at 22h 39m 03s.xml">
-      <configuration name="SkillTestPool.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SkillTestPool_test - 2020.04.08 at 22h 41m 20s.xml">
-      <configuration name="SkillTestPool.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SkillTestPool_test - 2020.04.08 at 22h 42m 13s.xml">
-      <configuration name="SkillTestPool.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SkillTestPool - 2020.04.08 at 22h 43m 14s.xml">
       <configuration name="SkillTestPool" configurationId="JUnit" />
     </history-entry>
@@ -1219,14 +1557,23 @@
     <history-entry file="NameTest_test - 2020.04.09 at 15h 21m 42s.xml">
       <configuration name="NameTest.test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PromotionServiceTest_test - 2020.04.09 at 20h 30m 16s.xml">
+      <configuration name="PromotionServiceTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PromotionServiceTest_test - 2020.04.09 at 20h 30m 47s.xml">
+      <configuration name="PromotionServiceTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PromotionServiceTest_test - 2020.04.09 at 20h 31m 44s.xml">
+      <configuration name="PromotionServiceTest.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347968000" />
+    <option name="totallyTimeSpent" value="343428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23720682" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23454158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1251,12 +1598,12 @@
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3286334" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.3286334" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.35900217" />
-      <window_info anchor="bottom" id="Run Dashboard" order="16" weight="0.44034708" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" visible="true" weight="0.44034708" />
       <window_info anchor="bottom" id="REST Client" order="17" weight="0.43383947" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.49319214" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.2260128" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.2260128" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="LuaJ" order="6" weight="0.32980332" />
@@ -1367,7 +1714,8 @@
     <MESSAGE value="二期项目，秒杀商品第一晚编写。" />
     <MESSAGE value="已经基本完成抢购商品的后台编写" />
     <MESSAGE value="完成抢购后台代码编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成抢购后台代码编写" />
+    <MESSAGE value="完成抢购后台代码编写,增加了添加抢购商品功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成抢购后台代码编写,增加了添加抢购商品功能" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1421,7 +1769,18 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ly-auth/src/main/java/com/leyou/auth/config/testskill.java" />
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/MyThread.java" />
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/TestSkill.java" />
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/t2.java" />
     <entry file="file://$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/PromotionServiceTest.java" />
+    <entry file="file://$PROJECT_DIR$/ly-api/ly-promotion-api/src/main/java/com/leyou/item/client/PromotionClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ly-pojo/ly-promotion-pojo/src/main/java/com/leyou/promotion/entity/PromotionEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -1523,13 +1882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ly-common/src/main/java/com/leyou/common/auth/utils/JwtUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ly-common/src/main/java/com/leyou/common/auth/utils/RsaUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1590">
@@ -1581,7 +1933,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ly-auth/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
+        <state relative-caret-position="572">
           <caret line="39" column="31" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
@@ -1623,8 +1975,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ly-gateway/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3090">
-          <caret line="103" column="23" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
+        <state relative-caret-position="360">
+          <caret line="102" column="11" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/config/PasswordConfigTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -1670,6 +2029,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="70" column="34" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/LyPromotionApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-order/src/main/java/com/leyou/order/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7290">
+          <caret line="282" selection-start-line="282" selection-end-line="282" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ly-order/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1687,24 +2070,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ly-api/ly-item-api/src/main/java/com/leyou/item/client/ItemClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/service/GoodsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
+        <state relative-caret-position="290">
           <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/mapper/CategoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-pojo/ly-item-pojo/src/main/java/com/leyou/item/entity/CategoryGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/controller/GoodsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="96" column="110" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="96" selection-end-column="110" />
+        <state relative-caret-position="292">
+          <caret line="101" lean-forward="true" selection-start-line="101" selection-end-line="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ly-api/ly-item-api/src/main/java/com/leyou/item/client/ItemClient.java">
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state relative-caret-position="-488" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-item/src/main/java/com/leyou/item/mapper/CategoryGroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-pojo/ly-promotion-pojo/src/main/java/com/leyou/promotion/entity/PromotionEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/test/java/com/leyou/promotion/service/PromotionServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-order/src/main/java/com/leyou/order/service/OrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="332" column="36" selection-start-line="332" selection-start-column="36" selection-end-line="332" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/controller/PromotionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1780,11 +2233,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ly-promotion/src/main/java/com/leyou/promotion/service/PromotionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="93" column="36" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
+        <state relative-caret-position="182">
+          <caret line="135" column="89" selection-start-line="135" selection-start-column="89" selection-end-line="135" selection-end-column="89" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/ProvincesCitiesAreasService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/UserInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="185" column="26" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="26" />
+          <folding>
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1766#1767#0" expanded="true" />
+            <element signature="e#1796#1797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ly-user/src/main/java/com/leyou/user/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1710">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
